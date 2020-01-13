@@ -1,0 +1,14 @@
+
+local orientation = 'portrait' -- portrait, landscapeRight, ...
+
+
+settings = {
+-------------------------------------------------------------------------------
+--  Orientation Settings 
+-------------------------------------------------------------------------------
+   orientation = {
+      default     = orientation,
+      supported   = { orientation },
+   },
+}
+return settings
