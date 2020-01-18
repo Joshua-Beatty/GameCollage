@@ -7,8 +7,8 @@ settings = {
 --  Orientation Settings 
 -------------------------------------------------------------------------------
    orientation = {
-      default     = orientation,
-      supported   = { orientation },
+      default     = "portrait",
+      supported = { "portrait" },
    },
 }
 return settings
