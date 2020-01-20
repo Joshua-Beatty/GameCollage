@@ -1,5 +1,5 @@
-local composer = require( "composer" )
-local widget = require( "widget" )
+local composer = require( "composer" )  --compsoer allows for swapping between scenes
+local widget = require( "widget" )  --widget allows easy generation of buttons
 
 local scene = composer.newScene()
 
@@ -7,13 +7,14 @@ local scene = composer.newScene()
 -- Code outside of the scene event functions below will only be executed ONCE unless
 -- the scene is removed entirely (not recycled) via "composer.removeScene()"
 -- -----------------------------------------------------------------------------------
-local function gototictactoe(event)
-    if(event.phase == "ended") then
+local function gototictactoe(event)  --simple function that will go to the TicTacToe scene
+    if(event.phase == "ended") then --wait for you to release the buton
         composer.gotoScene( "tictactoe" )
     end
 end
-local function gotoFlappy(event)
-    if(event.phase == "ended") then
+
+local function gotoFlappy(event)   --simple function that will go to the Flappy scene
+    if(event.phase == "ended") then  --wait for you to release the buton
         composer.gotoScene( "flappy" )
     end
 end
@@ -29,7 +30,7 @@ function scene:create( event )
 
     local sceneGroup = self.view
     -- Code here runs when the scene is first created but has not yet appeared on screen
-    local button1 = widget.newButton(
+    local button1 = widget.newButton(  --create new button with specific seetings visually
     {
         label = "button",
         onEvent = gototictactoe,
@@ -56,7 +57,7 @@ function scene:create( event )
     button1:setLabel( "TicTacToe" )
     sceneGroup:insert(button1)
 
-    local button1 = widget.newButton(
+    local button2 = widget.newButton(  --create new button with specific seetings visually
     {
         label = "button",
         onEvent = gotoFlappy,
@@ -75,18 +76,18 @@ function scene:create( event )
     }
     )
 
-    -- Center the button
-    button1.x = display.contentCenterX
-    button1.y = display.contentCenterY + 75
+    -- Center the button 
+    button2.x = display.contentCenterX
+    button2.y = display.contentCenterY + 75
 
     -- Change the button's label text
-    button1:setLabel( "Flappy Bird" )
-    sceneGroup:insert(button1)
+    button2:setLabel( "Flappy Ball" )
+    sceneGroup:insert(button2)
 
 end
 
 
--- show()
+-- show() -ignore everything below here this is only used if you want things to change in betwwen scenes.
 function scene:show( event )
 
     local sceneGroup = self.view

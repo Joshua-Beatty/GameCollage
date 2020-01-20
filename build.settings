@@ -1,13 +1,9 @@
-
-local orientation = 'portrait' -- portrait, landscapeRight, ...
-
-
-settings = {
+settings = {  --this is a lue file, just with a different extenstion
 -------------------------------------------------------------------------------
 --  Orientation Settings 
 -------------------------------------------------------------------------------
    orientation = {
-      default     = "portrait",
+      default     = "portrait",  --what orentation does the same start with and what are possible
       supported = { "portrait" },
    },
 }

@@ -335,7 +335,6 @@ end
 local function gotoMenu(event)
 	if(event.phase == "ended") then
 		composer.gotoScene( "mainmenu" )
-		print("clicked")
 	end
 end
 -- -----------------------------------------------------------------------------------
